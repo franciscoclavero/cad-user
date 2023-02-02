@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const App = () => {
+  const aaa = [ 'aaa' ];
   return (
     <h1>Hello World</h1>
   );
