@@ -1,4 +1,5 @@
 import index from "pasta/index";
+import index2 from "pasta/index";
 import React from "react";
 
 function App() {
