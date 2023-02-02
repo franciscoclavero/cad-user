@@ -1,3 +1,4 @@
+import index from "pasta/index";
 import React from "react";
 
 function App() {
