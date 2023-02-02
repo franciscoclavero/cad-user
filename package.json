@@ -1,4 +1,9 @@
 {
+  "husky":  {
+    "hooks":  {
+      "pre-commit":  "lint-staged"
+    }
+  },
   "name": "cad-user",
   "version": "0.1.0",
   "private": true,
