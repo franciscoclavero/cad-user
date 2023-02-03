@@ -11,6 +11,8 @@ Este é um projeto de Cadastro de pessoas utilizando a mockApi como banco de dad
 * Prettier
 * Jest
 * React Testing Library
+* Storybook
+* Styled-component
 
 ## Run Project
 
