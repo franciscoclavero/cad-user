@@ -78,7 +78,7 @@
       }
     ],
     "import/no-extraneous-dependencies": [
-      "error", { "devDependencies": ["**/*.test.tsx", "**/*.spec.js"] }
+      "error", { "devDependencies": ["**/*.test.tsx", "**/*.spec.js", "**/*.module.tsx", "**/*.stories.tsx"] }
     ],
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [ 
