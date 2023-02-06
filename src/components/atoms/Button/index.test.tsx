@@ -5,14 +5,14 @@ import Button from ".";
 
 describe("Button component ", () => {
   it("- render", () => {
-    const { container } = render(<Button click={() => {}} />);
+    render(<Button click={() => {}} />);
 
     const buttonNode = screen.getByText("Cadastrar");
     expect(buttonNode.textContent).toBe("Cadastrar");
   });
   it("- onClick event", () => {
     const handleClick = jest.fn();
-    const { container } = render(<Button click={handleClick} />);
+    render(<Button click={handleClick} />);
 
     const buttonNode = screen.getByText("Cadastrar");
     fireEvent.click(buttonNode);
