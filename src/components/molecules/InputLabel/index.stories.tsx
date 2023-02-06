@@ -8,6 +8,8 @@ export default {
   args: {
     name: "name",
     textLabel: "First name: ",
+    change: () => {},
+    value: "",
   },
 } as Meta<IInputLabel>;
 

@@ -5,7 +5,14 @@ import InputLabel from ".";
 
 describe("InputLabel ", () => {
   it("- render InputLabel", () => {
-    render(<InputLabel name="name" textLabel="First Name: " />);
+    render(
+      <InputLabel
+        name="name"
+        textLabel="First Name: "
+        change={() => {}}
+        value=""
+      />
+    );
 
     const InputLabelNode = screen.getByText("First Name:");
 
@@ -13,7 +20,12 @@ describe("InputLabel ", () => {
   });
   it("- render Label", () => {
     const { container } = render(
-      <InputLabel name="name" textLabel="First Name: " />
+      <InputLabel
+        name="name"
+        textLabel="First Name: "
+        change={() => {}}
+        value=""
+      />
     );
 
     const labelNode = container.getElementsByTagName("label");
@@ -22,7 +34,12 @@ describe("InputLabel ", () => {
   });
   it("- render Input", () => {
     const { container } = render(
-      <InputLabel name="name" textLabel="First Name: " />
+      <InputLabel
+        name="name"
+        textLabel="First Name: "
+        change={() => {}}
+        value=""
+      />
     );
 
     const inputNode = container.getElementsByTagName("input");

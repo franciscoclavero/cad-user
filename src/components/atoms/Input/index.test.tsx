@@ -5,17 +5,30 @@ import Input from ".";
 
 describe("Input component ", () => {
   it("- Render", () => {
-    const { container } = render(<Input name="teste" />);
+    const { container } = render(
+      <Input name="teste" change={() => {}} value="" />
+    );
 
     const inputNode = container.getElementsByTagName("input");
 
     expect(inputNode.length).toBe(1);
   });
   it("- OnChange", () => {
-    const { container } = render(<Input name="teste" />);
+    const handlerChange = jest.fn();
+    const { container } = render(
+      <Input name="teste" change={handlerChange} value="" />
+    );
     const inputNode = container.getElementsByTagName("input");
-    expect(inputNode[0].value).toBe("");
     fireEvent.change(inputNode[0], { target: { value: "Good Day" } });
-    expect(inputNode[0].value).toBe("Good Day");
+    expect(handlerChange).toHaveBeenCalledTimes(1);
+  });
+  it("- Value", () => {
+    const { container } = render(
+      <Input name="teste" change={() => {}} value="" />
+    );
+    const inputNode = container.getElementsByTagName("input");
+    inputNode[0].value = "New value";
+
+    expect(inputNode[0].value).toBe("New value");
   });
 });
