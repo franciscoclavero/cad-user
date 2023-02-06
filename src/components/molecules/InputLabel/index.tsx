@@ -2,6 +2,7 @@ import React from "react";
 
 import Input from "../../atoms/Input";
 import Label from "../../atoms/Label";
+import { InputLabelStyled } from "./style.module";
 
 interface ILabelInput {
   name: string;
@@ -10,10 +11,10 @@ interface ILabelInput {
 
 function LabelInput({ name, textLabel }: ILabelInput) {
   return (
-    <div>
+    <InputLabelStyled>
       <Label componentName={name} textContent={textLabel} />
       <Input name={name} />
-    </div>
+    </InputLabelStyled>
   );
 }
 
