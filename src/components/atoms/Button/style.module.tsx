@@ -21,8 +21,6 @@ export const ButtonStyled = styled.div`
     background-image: linear-gradient(-180deg, #1d95c9 0%, #17759c 100%);
   }
   @media (min-width: 768px) {
-    .button-43 {
-      padding: 1rem 2rem;
-    }
+    padding: 1rem 2rem;
   }
 `;
