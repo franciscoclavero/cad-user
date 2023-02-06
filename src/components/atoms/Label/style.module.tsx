@@ -5,4 +5,5 @@ export const LabelStyled = styled.label`
   display: block;
   font-size: 14px;
   font-weight: bold;
+  margin-bottom: 5px;
 `;
