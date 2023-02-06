@@ -4,12 +4,12 @@ import Input from "../../atoms/Input";
 import Label from "../../atoms/Label";
 import { InputLabelStyled } from "./style.module";
 
-interface ILabelInput {
+interface IInputLabel {
   name: string;
   textLabel: string;
 }
 
-function LabelInput({ name, textLabel }: ILabelInput) {
+function LabelInput({ name, textLabel }: IInputLabel) {
   return (
     <InputLabelStyled>
       <Label componentName={name} textContent={textLabel} />
