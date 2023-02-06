@@ -2,7 +2,7 @@ import React, { MouseEventHandler } from "react";
 
 import { ButtonStyled } from "./style.module";
 
-interface IButton {
+export interface IButton {
   click: MouseEventHandler<HTMLDivElement>;
 }
 
