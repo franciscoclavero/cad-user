@@ -1,13 +1,11 @@
 import React from "react";
 
-import Button from "./components/atoms/Button";
-import InputLabel from "./components/molecules/InputLabel";
+import ModalForm from "./components/templates/ModalForm";
 
 function App() {
   return (
     <div>
-      <InputLabel name="name" textLabel="First Name:" />
-      <Button click={() => {}} />
+      <ModalForm />
     </div>
   );
 }

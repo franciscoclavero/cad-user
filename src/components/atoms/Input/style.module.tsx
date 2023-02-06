@@ -6,5 +6,5 @@ export const StyledInput = styled.input`
   height: 30px;
   outline: none;
   padding: 5px;
-  width: 99%;
+  width: calc(100% - 10px);
 `;
