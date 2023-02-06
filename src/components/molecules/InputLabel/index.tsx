@@ -4,7 +4,7 @@ import Input from "../../atoms/Input";
 import Label from "../../atoms/Label";
 import { InputLabelStyled } from "./style.module";
 
-interface IInputLabel {
+export interface IInputLabel {
   name: string;
   textLabel: string;
 }
