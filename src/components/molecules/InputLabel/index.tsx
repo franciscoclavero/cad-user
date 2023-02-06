@@ -9,7 +9,7 @@ interface IInputLabel {
   textLabel: string;
 }
 
-function LabelInput({ name, textLabel }: IInputLabel) {
+function InputLabel({ name, textLabel }: IInputLabel) {
   return (
     <InputLabelStyled>
       <Label componentName={name} textContent={textLabel} />
@@ -18,4 +18,4 @@ function LabelInput({ name, textLabel }: IInputLabel) {
   );
 }
 
-export default LabelInput;
+export default InputLabel;
