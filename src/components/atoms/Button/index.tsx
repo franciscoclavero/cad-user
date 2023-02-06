@@ -1,9 +1,13 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 
 import { ButtonStyled } from "./style.module";
 
-function Button() {
-  return <ButtonStyled>Cadastrar</ButtonStyled>;
+interface IButton {
+  click: MouseEventHandler<HTMLDivElement>;
+}
+
+function Button({ click }: IButton) {
+  return <ButtonStyled onClick={click}>Cadastrar</ButtonStyled>;
 }
 
 export default Button;
