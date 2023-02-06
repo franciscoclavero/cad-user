@@ -1,7 +1,9 @@
 import React from "react";
 
+import { ButtonStyled } from "./style.module";
+
 function Button() {
-  return <div>Cadastrar</div>;
+  return <ButtonStyled>Cadastrar</ButtonStyled>;
 }
 
 export default Button;
