@@ -2,8 +2,12 @@ import React from "react";
 
 import { StyledInput } from "./style.module";
 
-function Input() {
-  return <StyledInput type="text" />;
+interface IInput {
+  name: string;
+}
+
+function Input({ name }: IInput) {
+  return <StyledInput name={name} type="text" />;
 }
 
 export default Input;
