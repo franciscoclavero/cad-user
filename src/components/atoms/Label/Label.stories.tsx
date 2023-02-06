@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import Label, { ILabel } from ".";
 
 export default {
-  title: "Components/Label",
+  title: "Atoms/Label",
   component: Label,
   args: {
     componentName: "name",
