@@ -2,7 +2,7 @@ import React from "react";
 
 import { LabelStyled } from "./style.module";
 
-interface ILabel {
+export interface ILabel {
   componentName: string;
   textContent: string;
 }

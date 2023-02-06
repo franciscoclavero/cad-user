@@ -1,10 +1,14 @@
-import { Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
-import Label from ".";
+import Label, { ILabel } from ".";
 
 export default {
   title: "Components/Label",
   component: Label,
-} as Meta;
+  args: {
+    componentName: "name",
+    textContent: "First name",
+  },
+} as Meta<ILabel>;
 
-export const Default = {};
+export const Default: StoryObj<ILabel> = {};
