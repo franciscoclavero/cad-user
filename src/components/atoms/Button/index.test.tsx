@@ -21,4 +21,12 @@ describe("Button component ", () => {
 
     expect(handleClick).toHaveBeenCalledTimes(3);
   });
+  it("- disabled component", () => {
+    const { container } = render(<Button disabled={false} />);
+
+    const buttonNode = container.getElementsByTagName("button")[0];
+    expect(buttonNode.disabled).toBe(false);
+    buttonNode.disabled = true;
+    expect(buttonNode.disabled).toBe(true);
+  });
 });

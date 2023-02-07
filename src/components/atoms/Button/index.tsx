@@ -7,9 +7,7 @@ export interface IButton {
 }
 
 function Button({ disabled }: IButton) {
-  useEffect(() => {
-    console.log(disabled);
-  }, [disabled]);
+  useEffect(() => {}, [disabled]);
 
   return (
     <ButtonStyled type="submit" disabled={disabled}>

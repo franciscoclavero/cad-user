@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { rest } from "msw";
 
-import Button from ".";
+import Button, { IButton } from ".";
 
 export default {
   title: "Atoms/Button",
@@ -16,10 +16,8 @@ export default {
     },
   },
   args: {
-    click: () => {
-      console.log("Teste");
-    },
+    disabled: false,
   },
-} as Meta;
+} as Meta<IButton>;
 
-export const Default: StoryObj = {};
+export const Default: StoryObj<IButton> = {};
