@@ -49,4 +49,19 @@ describe("InputLabel ", () => {
 
     expect(inputNode.length).toBe(1);
   });
+  it("- Error", () => {
+    const mockError = "Error test";
+    const { container } = render(
+      <InputLabel
+        name="name"
+        textLabel="First Name: "
+        change={() => {}}
+        value=""
+        error={mockError}
+      />
+    );
+
+    const errorNode = container.getElementsByTagName("p")[0];
+    expect(errorNode.innerHTML).toBe("Error test");
+  });
 });
