@@ -11,6 +11,7 @@ describe("InputLabel ", () => {
         textLabel="First Name: "
         change={() => {}}
         value=""
+        error=""
       />
     );
 
@@ -25,6 +26,7 @@ describe("InputLabel ", () => {
         textLabel="First Name: "
         change={() => {}}
         value=""
+        error=""
       />
     );
 
@@ -39,6 +41,7 @@ describe("InputLabel ", () => {
         textLabel="First Name: "
         change={() => {}}
         value=""
+        error=""
       />
     );
 
