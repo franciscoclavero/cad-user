@@ -17,8 +17,31 @@ function ModalForm() {
           city: "",
           state: "",
         }}
-        render={({ values, handleChange }) => (
-          <form>
+        validate={(values) => {
+          const errors = {
+            firstName: "",
+            lastName: "",
+            streetLine: "",
+            streetLine2: "",
+            city: "",
+            state: "",
+          };
+          if (!values.firstName) errors.firstName = "First name is required";
+          if (!values.lastName) errors.lastName = "Last Name is required";
+          if (!values.streetLine) errors.streetLine = "Street Line is required";
+          if (!values.state) errors.state = "State is required";
+          if (!values.city) errors.city = "City is required";
+          return errors;
+        }}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            console.log(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
+        }}
+      >
+        {({ values, errors, handleChange, handleSubmit, isSubmitting }) => (
+          <form onSubmit={handleSubmit}>
             <Title>Name</Title>
             <FlexDiv>
               <InputLabel
@@ -26,12 +49,14 @@ function ModalForm() {
                 textLabel="First name"
                 value={values.firstName}
                 change={handleChange}
+                error={errors.firstName}
               />
               <InputLabel
                 name="lastName"
                 textLabel="Last name"
                 value={values.lastName}
                 change={handleChange}
+                error={errors.lastName}
               />
             </FlexDiv>
             <Title>Address</Title>
@@ -41,12 +66,14 @@ function ModalForm() {
                 textLabel="Street line"
                 value={values.streetLine}
                 change={handleChange}
+                error={errors.streetLine}
               />
               <InputLabel
                 name="streetLine2"
                 textLabel="Street line 2"
                 value={values.streetLine2}
                 change={handleChange}
+                error={errors.streetLine2}
               />
               <FlexDiv>
                 <InputLabel
@@ -54,22 +81,23 @@ function ModalForm() {
                   textLabel="City"
                   value={values.city}
                   change={handleChange}
+                  error={errors.city}
                 />
                 <InputLabel
                   name="state"
                   textLabel="State/Province"
                   value={values.state}
                   change={handleChange}
+                  error={errors.state}
                 />
               </FlexDiv>
             </div>
+            <ButtonFlex>
+              <Button disabled={isSubmitting} />
+            </ButtonFlex>
           </form>
         )}
-        onSubmit={() => {}}
-      />
-      <ButtonFlex>
-        <Button click={() => {}} />
-      </ButtonFlex>
+      </Formik>
     </BodyDiv>
   );
 }
