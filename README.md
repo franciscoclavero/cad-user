@@ -1,27 +1,34 @@
-# Sistema de Cadastro de usuários
-Este é um projeto de Cadastro de pessoas utilizando a mockApi como banco de dados.
+
+## Screenshots
+
+![App Screenshot](./src/assets/cad-user.png)
 
 
-## Tecnologies
+# Cadastro de Pessoas
 
-* React.JS
-* Typescript
-* Husky
-* ESLint Airbnb
-* Prettier
-* Jest
-* React Testing Library
-* Storybook
-* Styled-component
+Sistema de cadastro de pessoas, usando mockapi como base.
 
-## Run Project
+
+## Tech Stack
+
+**Client:** React.JS, Typescript, Husky,  ESLint Airbnb,  Prettier,  Jest,  React Testing Library,  Storybook,  Styled-component, Formik, Test Coverage, Axios 
+
+
+## Rodar o projeto
 
 ```bash
-npm run dev
+npm start
 ```
 
-## Run Jest Tests
+## Rodando os testes
+
+Para rodar os testes, use:
 
 ```bash
-npm test
+  npm run test
+```
+Para rodar o coverage, use:
+
+```bash
+  npm test -- --coverage
 ```
