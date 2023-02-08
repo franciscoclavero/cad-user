@@ -8,10 +8,11 @@ import { BodyDiv } from "./style.module";
 function ModalForm() {
   const handleSubmitFormik = (
     values: TInitValues,
-    { setSubmitting }: FormikHelpers<TInitValues>
+    { setSubmitting, resetForm }: FormikHelpers<TInitValues>
   ) => {
     setTimeout(() => {
       postData(values);
+      resetForm();
       setSubmitting(false);
     }, 400);
   };
