@@ -82,7 +82,10 @@
     "webpack": "^5.75.0"
   },
   "jest": {
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
   },
   "eslintConfig": {
     "overrides": [

@@ -25,6 +25,17 @@ describe("ModalForm component ", () => {
 
     expect(buttonNode.innerHTML).toBe("Cadastrar");
   });
+  it("- Submit valueless", async () => {
+    const { container } = render(<ModalForm />);
+
+    const buttonNode = container.getElementsByTagName("button")[0];
+
+    fireEvent.click(buttonNode);
+    expect(buttonNode.disabled).toBe(true);
+    await waitFor(() => {
+      expect(buttonNode.disabled).toBe(false);
+    });
+  });
   it("- Submit with values", async () => {
     const { container } = render(<ModalForm />);
 
@@ -37,17 +48,6 @@ describe("ModalForm component ", () => {
     fireEvent.change(inputNodes[3], { target: { value: "new value" } });
     fireEvent.change(inputNodes[4], { target: { value: "new value" } });
     fireEvent.change(inputNodes[5], { target: { value: "new value" } });
-
-    fireEvent.click(buttonNode);
-    expect(buttonNode.disabled).toBe(true);
-    await waitFor(() => {
-      expect(buttonNode.disabled).toBe(false);
-    });
-  });
-  it("- Submit valueless", async () => {
-    const { container } = render(<ModalForm />);
-
-    const buttonNode = container.getElementsByTagName("button")[0];
 
     fireEvent.click(buttonNode);
     expect(buttonNode.disabled).toBe(true);
