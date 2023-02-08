@@ -1,29 +1,21 @@
+import { FormikHelpers } from "formik";
 import React from "react";
 
-import Button from "../../atoms/Button";
-import InputLabel from "../../molecules/InputLabel";
-import { BodyDiv, FlexDiv, ButtonFlex, Title } from "./style.module";
+import FormFormik, { TInitValues } from "../../molecules/FormFormik";
+import { BodyDiv } from "./style.module";
 
 function ModalForm() {
+  const handleSubmitFormik = (
+    values: TInitValues,
+    { setSubmitting }: FormikHelpers<TInitValues>
+  ) => {
+    setTimeout(() => {
+      setSubmitting(false);
+    }, 400);
+  };
   return (
     <BodyDiv>
-      <Title>Name</Title>
-      <FlexDiv>
-        <InputLabel name="firstName" textLabel="First name" />
-        <InputLabel name="lastName" textLabel="Last name" />
-      </FlexDiv>
-      <Title>Address</Title>
-      <div>
-        <InputLabel name="streetLine" textLabel="Street line" />
-        <InputLabel name="streetLine2" textLabel="Street line 2" />
-        <FlexDiv>
-          <InputLabel name="city" textLabel="City" />
-          <InputLabel name="state" textLabel="State/Province" />
-        </FlexDiv>
-      </div>
-      <ButtonFlex>
-        <Button click={() => {}} />
-      </ButtonFlex>
+      <FormFormik onSubmit={handleSubmitFormik} />
     </BodyDiv>
   );
 }

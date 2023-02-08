@@ -1,13 +1,19 @@
-import React, { MouseEventHandler } from "react";
+import React, { useEffect } from "react";
 
 import { ButtonStyled } from "./style.module";
 
 export interface IButton {
-  click: MouseEventHandler<HTMLDivElement>;
+  disabled: boolean;
 }
 
-function Button({ click }: IButton) {
-  return <ButtonStyled onClick={click}>Cadastrar</ButtonStyled>;
+function Button({ disabled }: IButton) {
+  useEffect(() => {}, [disabled]);
+
+  return (
+    <ButtonStyled type="submit" disabled={disabled}>
+      Cadastrar
+    </ButtonStyled>
+  );
 }
 
 export default Button;

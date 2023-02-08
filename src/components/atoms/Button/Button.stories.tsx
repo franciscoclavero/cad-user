@@ -16,9 +16,7 @@ export default {
     },
   },
   args: {
-    click: () => {
-      console.log("Teste");
-    },
+    disabled: false,
   },
 } as Meta<IButton>;
 

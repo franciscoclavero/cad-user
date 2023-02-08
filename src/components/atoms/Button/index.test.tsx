@@ -5,20 +5,18 @@ import Button from ".";
 
 describe("Button component ", () => {
   it("- render", () => {
-    render(<Button click={() => {}} />);
+    render(<Button disabled={false} />);
 
     const buttonNode = screen.getByText("Cadastrar");
     expect(buttonNode.textContent).toBe("Cadastrar");
   });
-  it("- onClick event", () => {
-    const handleClick = jest.fn();
-    render(<Button click={handleClick} />);
 
-    const buttonNode = screen.getByText("Cadastrar");
-    fireEvent.click(buttonNode);
-    fireEvent.click(buttonNode);
-    fireEvent.click(buttonNode);
+  it("- disabled component", () => {
+    const { container } = render(<Button disabled={false} />);
 
-    expect(handleClick).toHaveBeenCalledTimes(3);
+    const buttonNode = container.getElementsByTagName("button")[0];
+    expect(buttonNode.disabled).toBe(false);
+    buttonNode.disabled = true;
+    expect(buttonNode.disabled).toBe(true);
   });
 });

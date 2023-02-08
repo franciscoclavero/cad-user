@@ -6,7 +6,7 @@ import App from "./App";
 
 describe("App ", () => {
   it("- Render", () => {
-    const { container } = render(<App />);
+    render(<App />);
     const node = screen.queryByText("Hello World");
 
     expect(node).toBeInTheDocument();
