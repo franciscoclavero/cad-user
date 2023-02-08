@@ -14,6 +14,15 @@ export const initValues = {
   state: "",
 };
 
+interface IErrorList {
+  firstName?: string;
+  lastName?: string;
+  streetLine?: string;
+  streetLine2?: string;
+  city?: string;
+  state?: string;
+}
+
 export type TInitValues = typeof initValues;
 export type TFormFormik = {
   onSubmit: (
@@ -22,8 +31,33 @@ export type TFormFormik = {
   ) => void;
 };
 function FormFormik({ onSubmit }: TFormFormik) {
+  const FormValidade = (values: TInitValues) => {
+    const errors: IErrorList = {};
+
+    if (!values.firstName) {
+      errors.firstName = "Required";
+    }
+
+    if (!values.lastName) {
+      errors.lastName = "Required";
+    }
+    if (!values.streetLine) {
+      errors.streetLine = "Required";
+    }
+    if (!values.city) {
+      errors.city = "Required";
+    }
+    if (!values.state) {
+      errors.state = "Required";
+    }
+    return errors;
+  };
   return (
-    <Formik initialValues={initValues} validate={() => {}} onSubmit={onSubmit}>
+    <Formik
+      initialValues={initValues}
+      validate={FormValidade}
+      onSubmit={onSubmit}
+    >
       {({ values, errors, handleChange, handleSubmit, isSubmitting }) => (
         <form onSubmit={handleSubmit}>
           <Title>Name</Title>
