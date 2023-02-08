@@ -37,7 +37,6 @@ function FormFormik({ onSubmit }: TFormFormik) {
     if (!values.firstName) {
       errors.firstName = "Required";
     }
-
     if (!values.lastName) {
       errors.lastName = "Required";
     }
