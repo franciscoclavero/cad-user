@@ -2,12 +2,8 @@ import { Formik, FormikHelpers } from "formik";
 import React from "react";
 
 import Button from "../../atoms/Button";
-import {
-  FlexDiv,
-  ButtonFlex,
-  Title,
-} from "../../templates/ModalForm/style.module";
 import InputLabel from "../InputLabel";
+import { FlexDiv, ButtonFlex, Title } from "./index.module";
 
 export const initValues = {
   firstName: "",

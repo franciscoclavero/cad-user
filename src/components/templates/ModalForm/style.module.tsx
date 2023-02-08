@@ -10,13 +10,3 @@ export const BodyDiv = styled.div`
   transform: translate(-50%, -50%);
   width: 1000px;
 `;
-export const FlexDiv = styled.div`
-  display: flex;
-`;
-
-export const ButtonFlex = styled.div`
-  margin-top: 10px;
-`;
-export const Title = styled.h3`
-  margin: 5px;
-`;
