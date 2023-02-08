@@ -2,13 +2,13 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import React from "react";
 
-import App from "./App";
+import App from ".";
 
-describe("App ", () => {
+describe("InitialPage component ", () => {
   it("- Render", () => {
     render(<App />);
-    const node = screen.queryByText("Hello World");
+    const nodeName = screen.queryByText("Name");
 
-    expect(node).toBeInTheDocument();
+    expect(nodeName).toBeInTheDocument();
   });
 });
