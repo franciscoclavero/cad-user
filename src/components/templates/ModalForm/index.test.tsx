@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import React from "react";
 
 import ModalForm from ".";
@@ -24,5 +24,16 @@ describe("ModalForm component ", () => {
     const buttonNode = screen.getByText("Cadastrar");
 
     expect(buttonNode.innerHTML).toBe("Cadastrar");
+  });
+  it("- Submit", async () => {
+    const { container } = render(<ModalForm />);
+
+    const buttonNode = container.getElementsByTagName("button")[0];
+
+    fireEvent.click(buttonNode);
+    expect(buttonNode.disabled).toBe(true);
+    await waitFor(() => {
+      expect(buttonNode.disabled).toBe(false);
+    });
   });
 });
