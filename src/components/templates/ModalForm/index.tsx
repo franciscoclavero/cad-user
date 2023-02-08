@@ -10,7 +10,6 @@ function ModalForm() {
     { setSubmitting }: FormikHelpers<TInitValues>
   ) => {
     setTimeout(() => {
-      console.log(JSON.stringify(values, null, 2));
       setSubmitting(false);
     }, 400);
   };
