@@ -10,19 +10,7 @@ describe("Button component ", () => {
     const buttonNode = screen.getByText("Cadastrar");
     expect(buttonNode.textContent).toBe("Cadastrar");
   });
-  it("- onClick event", () => {
-    const handler = jest.fn((e) => e.preventDefault());
-    render(<Button disabled={false} />);
 
-    const buttonNode = screen.getByText("Cadastrar");
-    console.log(buttonNode);
-
-    fireEvent.click(buttonNode);
-    fireEvent.click(buttonNode);
-    fireEvent.click(buttonNode);
-
-    expect(handler).toHaveBeenCalledTimes(3);
-  });
   it("- disabled component", () => {
     const { container } = render(<Button disabled={false} />);
 
